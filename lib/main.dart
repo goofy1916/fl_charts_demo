@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: PieChartSample1(),
+      home: MyHomePage(),
     );
   }
 }
@@ -37,7 +37,8 @@ class _MyHomePageState extends State<MyHomePage> {
         child: PageView(
           children: <Widget>[
             PieChart(
-              PieChartData(),
+              PieChartData(
+                  sections: data, centerSpaceRadius: 0, sectionsSpace: 10),
             ),
           ],
         ),
@@ -45,3 +46,10 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
+
+List<PieChartSectionData> data = [
+  PieChartSectionData(title: "A", color: Colors.red),
+  PieChartSectionData(title: "B", color: Colors.green),
+  PieChartSectionData(title: "C", color: Colors.orange),
+  PieChartSectionData(title: "D", color: Colors.yellow),
+];
